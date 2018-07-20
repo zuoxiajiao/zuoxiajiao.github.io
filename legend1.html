@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- Use echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- Prepare the DOM element to be held by eCharts -->
+    After adding legend, you can switch on/off certain series by clicking the legend.
+    <div id="main1" style="width: 600px;height:400px;"></div>
+
+    <script type="text/javascript">
+        // Initialse eCharts
+
+        option = {
+            "title": {
+                "text": "我国城乡居民“三率”对比",
+            },
+            "legend": {
+                "data": ["城市", "乡村"],
+                "align": "left",
+                "top": 20,
+                "left": 10
+            },
+            "xAxis": [{
+                "type": "category",
+                "data": [
+                    "肥胖率",
+                    "高血压患病率",
+                    "糖尿病患病率"
+                ],
+                "axisTick": {
+                    "alignWithLabel": true
+                }
+            }],
+            "yAxis": [{
+                "type": "value"
+            }],
+            "series": [{
+                "name": "城市",
+                "type": "bar",
+                "data": [
+                    0.127,
+                    0.231,
+                    0.081
+                ],
+            }, {
+                "name": "乡村",
+                "type": "bar",
+                "data": [
+                    0.109,
+                    0.229,
+                    0.041,
+
+                ],
+            }]
+        };
+
+        // Use the option to display chart
+        var myChart1 = echarts.init(document.getElementById('main1'));
+        myChart1.setOption(option);
+    </script>
+</body>
+
+</html>
